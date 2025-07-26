@@ -39,6 +39,7 @@ import {
   deleteSupplier,
   getAllSuppliers,
   saveSupplier,
+  updateSupplier,
 } from "../controllers/supplier.controller.js";
 import { createUser, login } from "../controllers/user.controller.js";
 
@@ -65,8 +66,9 @@ router.get("/position", getAllPositions);
 
 //Supplier routes
 router.post("/supplier", saveSupplier);
+router.put("/supplier/:id", updateSupplier);
 router.delete("/supplier/:id", deleteSupplier);
-router.get("/supplier", getAllSuppliers);
+router.get("/suppliers", getAllSuppliers);
 
 //Product routes
 router.post("/product", saveProduct);

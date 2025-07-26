@@ -25,9 +25,10 @@ const supplierSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  esNacional: {
+  nacional: {
     type: Boolean,
-    required: true,
+    required: false,
+    default: false,
   },
 });
 

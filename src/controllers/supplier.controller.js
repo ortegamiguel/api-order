@@ -29,3 +29,16 @@ export const getAllSuppliers = async (req, res) => {
     res.status(500).json({ error });
   }
 };
+
+export const updateSupplier = async (req, res) => {
+  const id = req.params.id;
+  const updatedData = req.body;
+  try {
+    const updatedSupplier = await Supplier.findByIdAndUpdate(id, updatedData, {
+      new: true,
+    });
+    res.json(updatedSupplier);
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
